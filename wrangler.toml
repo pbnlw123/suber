@@ -2,12 +2,13 @@ name = "subscription-manager"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 
+# 定时任务：每天 UTC 08:00 检查
 [triggers]
-crons = ["0 8 * * *"]  # 每天UTC 08:00运行检查
+crons = ["0 8 * * *"]
 
 [[kv_namespaces]]
 binding = "SUBSCRIPTION_KV"
-id = "your_kv_namespace_id"  # 创建后填入
+id = "your_kv_namespace_id"
 
 [vars]
-API_KEY = "your-secure-api-key-here"  # 建议改用Secrets
+API_KEY = "your-secure-api-key-change-this"
